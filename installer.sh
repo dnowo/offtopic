@@ -100,9 +100,6 @@ case $ARCH in
 	    HASSIO_DOCKER="$DOCKER_REPO/armhf-hassio-supervisor"
 	;;
     "aarch64")
-        if [ -z $MACHINE ]; then
-            error "Please set machine for $ARCH"
-        fi
         HOMEASSISTANT_DOCKER="$DOCKER_REPO/armhf-homeassistant"
 	    HASSIO_DOCKER="$DOCKER_REPO/armhf-hassio-supervisor"
     ;;
