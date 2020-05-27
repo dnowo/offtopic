@@ -87,13 +87,13 @@ CONFIG=$SYSCONFDIR/hassio.json
 case $ARCH in
     "i386" | "i686")
         MACHINE=${MACHINE:=qemux86}
-        HOMEASSISTANT_DOCKER="$DOCKER_REPO/$MACHINE-homeassistant"
-        HASSIO_DOCKER="$DOCKER_REPO/i386-hassio-supervisor"
+        HOMEASSISTANT_DOCKER="$DOCKER_REPO/armhf-homeassistant"
+	    HASSIO_DOCKER="$DOCKER_REPO/armhf-hassio-supervisor"
     ;;
     "x86_64")
         MACHINE=${MACHINE:=qemux86-64}
-        HOMEASSISTANT_DOCKER="$DOCKER_REPO/$MACHINE-homeassistant"
-        HASSIO_DOCKER="$DOCKER_REPO/amd64-hassio-supervisor"
+        HOMEASSISTANT_DOCKER="$DOCKER_REPO/armhf-homeassistant"
+	    HASSIO_DOCKER="$DOCKER_REPO/armhf-hassio-supervisor"
     ;;
 	"arm" | "armv7l" | "armv6l")
 	    HOMEASSISTANT_DOCKER="$DOCKER_REPO/armhf-homeassistant"
@@ -103,8 +103,8 @@ case $ARCH in
         if [ -z $MACHINE ]; then
             error "Please set machine for $ARCH"
         fi
-        HOMEASSISTANT_DOCKER="$DOCKER_REPO/$MACHINE-homeassistant"
-        HASSIO_DOCKER="$DOCKER_REPO/aarch64-hassio-supervisor"
+        HOMEASSISTANT_DOCKER="$DOCKER_REPO/armhf-homeassistant"
+	    HASSIO_DOCKER="$DOCKER_REPO/armhf-hassio-supervisor"
     ;;
     *)
         error "$ARCH unknown!"
