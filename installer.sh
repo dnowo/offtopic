@@ -95,20 +95,14 @@ case $ARCH in
         HOMEASSISTANT_DOCKER="$DOCKER_REPO/$MACHINE-homeassistant"
         HASSIO_DOCKER="$DOCKER_REPO/amd64-hassio-supervisor"
     ;;
-    "arm" |"armv6l")
-        if [ -z $MACHINE ]; then
-            error "Please set machine for $ARCH"
-        fi
-        HOMEASSISTANT_DOCKER="$DOCKER_REPO/$MACHINE-homeassistant"
-        HASSIO_DOCKER="$DOCKER_REPO/armhf-hassio-supervisor"
-    ;;
-    "armv7l")
-        if [ -z $MACHINE ]; then
-            error "Please set machine for $ARCH"
-        fi
-        HOMEASSISTANT_DOCKER="$DOCKER_REPO/$MACHINE-homeassistant"
-        HASSIO_DOCKER="$DOCKER_REPO/armv7-hassio-supervisor"
-    ;;
+	"arm" | "armv7l" | "armv6l")
+	    if [ -z $MACHINE ]; then
+		echo "[ERROR] Please set machine for $ARCH"
+		exit 1
+	    fi
+	    HOMEASSISTANT_DOCKER="$DOCKER_REPO/armhf-homeassistant"
+	    HASSIO_DOCKER="$DOCKER_REPO/armhf-hassio-supervisor"
+	;;
     "aarch64")
         if [ -z $MACHINE ]; then
             error "Please set machine for $ARCH"
