@@ -14,7 +14,6 @@ warn "via a Docker container."
 warn ""
 echo 'Please typ "not supported" to continue this installation'
 
-
 ARCH=$(uname -m)
 DOCKER_BINARY=/usr/bin/docker
 DOCKER_REPO=homeassistant
