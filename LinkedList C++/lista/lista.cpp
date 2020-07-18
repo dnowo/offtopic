@@ -41,6 +41,7 @@ int main()
 
 	lista->printList();
 	*/
+
 	List list = List();
 	List list2 = List();
 	cout << "list: "; list.printList(); cout << endl;
